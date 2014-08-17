@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>382C3FE5-83CE-47CC-B7A6-37CEC79EC0A9</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SayroomSDK</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CF5E8F9C-F621-4B89-B6DE-24C42F52B560</key>
+		<string>https://github.com/jovonni/SayroomSDK---iPhone.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SayroomSDK.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CF5E8F9C-F621-4B89-B6DE-24C42F52B560</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jovonni/SayroomSDK---iPhone.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CF5E8F9C-F621-4B89-B6DE-24C42F52B560</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CF5E8F9C-F621-4B89-B6DE-24C42F52B560</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SayroomSDK---iPhone</string>
+		</dict>
+	</array>
+</dict>
+</plist>
