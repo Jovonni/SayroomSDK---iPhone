@@ -79,6 +79,8 @@ static SayroomSDK *sharedInstance = nil;
     
     NSLog(@"status 2: %@", status);
     
+    
+    //initiated, so init recording object, and startuprecordsession -- session should not have to restart everytime you want to record.
     recordObject = [[SRAudioRecorder alloc] init];
     [recordObject startUpRecorderSession];
     
@@ -126,7 +128,7 @@ static SayroomSDK *sharedInstance = nil;
     
 }
 
--(void)playAudioForTest{
+-(void)playCurrentAudioRecording{
     [recordObject playAudio];
 }
 

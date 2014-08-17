@@ -41,7 +41,7 @@
 
 -(IBAction)playAudio:(id)sender{
     
-    [srsdk playAudioForTest];
+    [srsdk playCurrentAudioRecording];
     
 }
 

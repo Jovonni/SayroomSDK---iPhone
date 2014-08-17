@@ -25,8 +25,7 @@
 - (BOOL)recordAudio; //audio recorder
 - (BOOL)stopRecordingOnImage: (int)biid reactorMemberID: (int)rmid APIKey: (NSString *)apik; //svr calls
 - (BOOL)stopRecordingOnTask: (int)btid reactorMemberID: (int)rmid APIKey: (NSString *)apik; //svr calls
-
--(void)playAudioForTest;
+- (void)playCurrentAudioRecording;
 
 
 @end
