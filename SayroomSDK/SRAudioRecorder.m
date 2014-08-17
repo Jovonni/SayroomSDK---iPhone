@@ -61,7 +61,8 @@
 -(void)isRecordingAtTenSeconds{
     
     int recordingtime = audioRecorder.currentTime;
-    //NSLog(@"recording: %i", recordingtime);
+    
+    NSLog(@"recording: %i", recordingtime);
     
     
     
