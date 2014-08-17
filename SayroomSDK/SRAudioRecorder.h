@@ -15,10 +15,11 @@
 }
 
 
+-(void)startUpRecorderSession;
 -(BOOL)recordAudio;
 -(BOOL)stopRecordingOnImage: (int)biid reactorMemberID: (int)rmid APIKey: (NSString *)apik;
 -(BOOL)stopRecordingOnTask: (int)btid reactorMemberID: (int)rmid APIKey: (NSString *)apik;
 
-
+-(void)playAudio;
 
 @end

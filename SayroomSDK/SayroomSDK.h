@@ -10,7 +10,7 @@
 #import "SRAudioRecorder.h"
 #import "SRServerCalls.h"
 
-@interface SayroomSDK : SRAudioRecorder {
+@interface SayroomSDK : NSObject {
     
     NSString * status;
     
@@ -26,7 +26,7 @@
 - (BOOL)stopRecordingOnImage: (int)biid reactorMemberID: (int)rmid APIKey: (NSString *)apik; //svr calls
 - (BOOL)stopRecordingOnTask: (int)btid reactorMemberID: (int)rmid APIKey: (NSString *)apik; //svr calls
 
-
+-(void)playAudioForTest;
 
 
 @end

@@ -15,6 +15,7 @@
     
     NSString *userAPIKey;
     int reactorMemberID;
+    SRAudioRecorder *recordObject;
     
     
 }
@@ -78,6 +79,10 @@ static SayroomSDK *sharedInstance = nil;
     
     NSLog(@"status 2: %@", status);
     
+    recordObject = [[SRAudioRecorder alloc] init];
+    [recordObject startUpRecorderSession];
+    
+    
     return self;
 }
 
@@ -86,15 +91,19 @@ static SayroomSDK *sharedInstance = nil;
     
     
     
-    SRAudioRecorder *srar = [[SRAudioRecorder alloc] init];
     
-    [srar recordAudio];
+    //recordObject = [[SRAudioRecorder alloc] init];
+    
+    //[recordObject startUpRecorderSession];
+    
+    [recordObject recordAudio];
     
     
     return YES;
 }
 
 - (BOOL)stopRecordingOnImage: (int)biid reactorMemberID: (int)rmid APIKey: (NSString *)apik{
+    
     
     
     SRAudioRecorder *srar = [[SRAudioRecorder alloc] init];
@@ -117,7 +126,9 @@ static SayroomSDK *sharedInstance = nil;
     
 }
 
-
+-(void)playAudioForTest{
+    [recordObject playAudio];
+}
 
 
 
@@ -136,7 +147,7 @@ static SayroomSDK *sharedInstance = nil;
 -(id)init{
     
     NSLog(@"Init was called too");
-    
+        
     return [self initWithApplicationKey: reactorMemberID APIKey:userAPIKey];
 }
 

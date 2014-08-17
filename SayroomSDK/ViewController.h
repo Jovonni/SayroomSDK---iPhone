@@ -13,7 +13,7 @@
 -(IBAction)recordAudio:(id)sender;
 -(IBAction)stopRecordingOnImage:(id)sender;
 -(IBAction)stopRecordingOnTask:(id)sender;
-
+-(IBAction)playAudio:(id)sender;
 @end
 
 

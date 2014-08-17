@@ -28,6 +28,7 @@
 
 -(IBAction)stopRecordingOnImage:(id)sender{
     
+    
     [srsdk stopRecordingOnImage:1 reactorMemberID:reactorMemberID APIKey:apikey];
     
 }
@@ -37,6 +38,13 @@
     [srsdk stopRecordingOnTask:1 reactorMemberID:reactorMemberID APIKey:apikey];
     
 }
+
+-(IBAction)playAudio:(id)sender{
+    
+    [srsdk playAudioForTest];
+    
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
