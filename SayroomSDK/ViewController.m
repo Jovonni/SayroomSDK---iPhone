@@ -60,10 +60,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    apikey = @"bi4WZa1TXqRv75sJXKMjLY6JarnFDwZpQ1WqodwLkSG2rdKmG8";
+    //apikey = @"bi4WZa1TXqRv75sJXKMjLY6JarnFDwZpQ1WqodwLkSG2rdKmG8";
+    apikey = @"3r9gyBK3hurUQx82OwMSsjm4";
     reactorMemberID = 1;
     
-    srsdk = [[SayroomSDK alloc] initWithApplicationKey:22 APIKey:apikey];
+    srsdk = [[SayroomSDK alloc] initWithApplicationKey:reactorMemberID APIKey:apikey];
     
 }
 

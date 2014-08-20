@@ -7,6 +7,7 @@
 //
 
 #import "SRAudioRecorder.h"
+#import "SRServerCalls.h"
 
 @interface SRAudioRecorder(){
     AVAudioPlayer *audio;
@@ -239,6 +240,12 @@
     
     NSLog(@"stopping recording");
     
+    SRServerCalls *srsc = [[SRServerCalls alloc] init];
+    
+    NSString *userLocation = @"THELOCATION";
+    
+    [srsc userUploadAudioForImage:rmid brandImageID:biid userLocation:userLocation apikey:apik];
+    
     return YES;
     
 }
@@ -247,6 +254,13 @@
 -(BOOL)stopRecordingOnTask: (int)btid reactorMemberID: (int)rmid APIKey: (NSString *)apik{
     
     NSLog(@"stopping recording");
+    
+    SRServerCalls *srsc = [[SRServerCalls alloc] init];
+    
+    NSString *userLocation = @"THELOCATION";
+    
+    [srsc userUploadAudioForTask:rmid brandTaskID:btid userLocation:userLocation apikey:apik];
+
     
     return YES;
     

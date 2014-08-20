@@ -14,7 +14,7 @@
     
 }
 -(BOOL)verifyAPI: (int)reactorMemberID withApplicationKey: (NSString *)apiKey;
--(BOOL)userUploadAudioForImage: (int)userID brandImageID: (int)biid userLocation: (NSString*)userCurrentLocation;
--(BOOL)userUploadAudioForTask: (int)userID brandTaskID: (int)btid userLocation: (NSString*)userCurrentLocation;
+-(BOOL)userUploadAudioForImage: (int)userID brandImageID: (int)biid userLocation: (NSString*)userCurrentLocation apikey:(NSString *)apikey;
+-(BOOL)userUploadAudioForTask: (int)userID brandTaskID: (int)btid userLocation: (NSString*)userCurrentLocation apikey:(NSString *)apikey;
 
 @end
