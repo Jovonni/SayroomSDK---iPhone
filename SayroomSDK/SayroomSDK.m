@@ -15,6 +15,8 @@
     
     NSString *userAPIKey;
     int reactorMemberID;
+    
+    
     SRAudioRecorder *recordObject;
     
     
@@ -104,7 +106,7 @@ static SayroomSDK *sharedInstance = nil;
     return YES;
 }
 
-- (BOOL)stopRecordingOnImage: (int)biid reactorMemberID: (int)rmid APIKey: (NSString *)apik{
+- (BOOL)stopRecordingOnImage: (int)biid{
     
     
     
@@ -117,7 +119,7 @@ static SayroomSDK *sharedInstance = nil;
 
 }
 
-- (BOOL)stopRecordingOnTask: (int)btid reactorMemberID: (int)rmid APIKey: (NSString *)apik{
+- (BOOL)stopRecordingOnTask: (int)btid{
     
     
     SRAudioRecorder *srar = [[SRAudioRecorder alloc] init];

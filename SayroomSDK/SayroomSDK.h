@@ -23,8 +23,8 @@
 
 //accessible methods
 - (BOOL)recordAudio; //audio recorder
-- (BOOL)stopRecordingOnImage: (int)biid reactorMemberID: (int)rmid APIKey: (NSString *)apik; //svr calls
-- (BOOL)stopRecordingOnTask: (int)btid reactorMemberID: (int)rmid APIKey: (NSString *)apik; //svr calls
+- (BOOL)stopRecordingOnImage: (int)biid; //svr calls
+- (BOOL)stopRecordingOnTask: (int)btid; //svr calls
 - (void)playCurrentAudioRecording;
 
 

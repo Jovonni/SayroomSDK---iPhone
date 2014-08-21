@@ -29,13 +29,13 @@
 -(IBAction)stopRecordingOnImage:(id)sender{
     
     
-    [srsdk stopRecordingOnImage:1 reactorMemberID:reactorMemberID APIKey:apikey];
+    [srsdk stopRecordingOnImage:1];
     
 }
 
 -(IBAction)stopRecordingOnTask:(id)sender{
     
-    [srsdk stopRecordingOnTask:1 reactorMemberID:reactorMemberID APIKey:apikey];
+    [srsdk stopRecordingOnTask:1];
     
 }
 
