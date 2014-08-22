@@ -14,9 +14,7 @@
 @interface SayroomSDK() {
     
     NSString *userAPIKey;
-    int reactorMemberID;
-    
-    
+    int reactorMemberID;    
     SRAudioRecorder *recordObject;
     
     
@@ -84,6 +82,8 @@ static SayroomSDK *sharedInstance = nil;
     
     //initiated, so init recording object, and startuprecordsession -- session should not have to restart everytime you want to record.
     recordObject = [[SRAudioRecorder alloc] init];
+    
+    //initiate startup record session
     [recordObject startUpRecorderSession];
     
     
@@ -91,11 +91,14 @@ static SayroomSDK *sharedInstance = nil;
 }
 
 
+- (float)getCurrentRecordingTime{
+    return [recordObject sendRecordingTime];
+}
+
+
 - (BOOL)recordAudio{
-    
-    
-    
-    
+
+    status = @"Recording";
     //recordObject = [[SRAudioRecorder alloc] init];
     
     //[recordObject startUpRecorderSession];
@@ -108,10 +111,10 @@ static SayroomSDK *sharedInstance = nil;
 
 - (BOOL)stopRecordingOnImage: (int)biid{
     
-    
+    status = @"Not Recording";
     
     SRAudioRecorder *srar = [[SRAudioRecorder alloc] init];
-    
+        
     [srar stopRecordingOnImage:1 reactorMemberID:reactorMemberID APIKey:userAPIKey];
     
     
@@ -121,6 +124,7 @@ static SayroomSDK *sharedInstance = nil;
 
 - (BOOL)stopRecordingOnTask: (int)btid{
     
+    status = @"Not Recording";
     
     SRAudioRecorder *srar = [[SRAudioRecorder alloc] init];
     

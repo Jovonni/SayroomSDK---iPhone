@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0500"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B2B04E9A199F3EF500C7F161"
-               BuildableName = "SayroomSDK.app"
+               BlueprintIdentifier = "B2335B9919A482F8000707C4"
+               BuildableName = "libSayroomSDK.a"
                BlueprintName = "SayroomSDK"
                ReferencedContainer = "container:SayroomSDK.xcodeproj">
             </BuildableReference>
@@ -32,22 +32,13 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B2B04EB5199F3EF500C7F161"
+               BlueprintIdentifier = "B2335BA919A482F8000707C4"
                BuildableName = "SayroomSDKTests.xctest"
                BlueprintName = "SayroomSDKTests"
                ReferencedContainer = "container:SayroomSDK.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B2B04E9A199F3EF500C7F161"
-            BuildableName = "SayroomSDK.app"
-            BlueprintName = "SayroomSDK"
-            ReferencedContainer = "container:SayroomSDK.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -58,15 +49,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B2B04E9A199F3EF500C7F161"
-            BuildableName = "SayroomSDK.app"
-            BlueprintName = "SayroomSDK"
-            ReferencedContainer = "container:SayroomSDK.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -76,15 +58,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B2B04E9A199F3EF500C7F161"
-            BuildableName = "SayroomSDK.app"
-            BlueprintName = "SayroomSDK"
-            ReferencedContainer = "container:SayroomSDK.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

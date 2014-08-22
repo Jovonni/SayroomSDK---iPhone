@@ -50,7 +50,25 @@
     
     if (![recordingTimer isValid]){
         NSLog(@"Readying recorder");
-        [self readyRecorder];
+        
+        
+        ////////////THREAD
+        dispatch_queue_t SendQueue = dispatch_queue_create("com.apt.OppQueue", 0);
+        
+        dispatch_async(SendQueue, ^{
+        
+            
+            [self readyRecorder];
+            
+            
+            dispatch_async(dispatch_get_main_queue(), ^ {
+                //main thread things
+                
+            });
+            
+        });
+        
+            
     }else{
         NSLog(@"Recorder/Timer running");
     }
@@ -146,13 +164,26 @@
         [recordingTimer invalidate], recordingTimer=nil;
     }
     
-    
+    ////////////THREAD
     
     //if not recording
     if (!audioRecorder.recording && ![recordingTimer isValid]){
         //playButton.enabled = NO;
         NSLog(@"About to record");
-        [self startTheRecorder];
+        
+        ////////////THREAD
+        dispatch_queue_t SendQueue = dispatch_queue_create("com.apt.OppQueue", 0);
+        
+        dispatch_async(SendQueue, ^{
+        
+            [self startTheRecorder];
+            
+            dispatch_async(dispatch_get_main_queue(), ^ {
+                //main thread things
+                
+            });
+            
+        });
         
         //take out setting title, set title in timer
         //[recordingButton setTitle:@"Listening" forState:UIControlStateNormal];
@@ -177,6 +208,8 @@
     //
     return YES;
     
+    
+    
 }
 
 
@@ -192,7 +225,6 @@
                                 error:&error];
     
     audio.delegate = self;
-    
     
     
     if (error){
@@ -220,6 +252,8 @@
     int countdowntime = recordingtime - 10;
     int realcountdowntime = countdowntime * -1;
     
+    
+    
      //
     
     //count, and stop at 10
@@ -235,9 +269,14 @@
     
 }
 
+-(float)sendRecordingTime{
+    return audioRecorder.currentTime;
+}
+
 
 -(BOOL)stopRecordingOnImage: (int)biid reactorMemberID: (int)rmid APIKey: (NSString *)apik{
     
+    [self stopTheRecording];
     
     NSLog(@"stopping recording");
     
@@ -253,6 +292,8 @@
 
 
 -(BOOL)stopRecordingOnTask: (int)btid reactorMemberID: (int)rmid APIKey: (NSString *)apik{
+    
+    [self stopTheRecording];
     
     NSLog(@"stopping recording");
     

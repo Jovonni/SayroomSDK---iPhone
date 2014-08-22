@@ -1,2 +1,0 @@
-SayroomSDK---iPhone
-===================

@@ -26,6 +26,7 @@
 - (BOOL)stopRecordingOnImage: (int)biid; //svr calls
 - (BOOL)stopRecordingOnTask: (int)btid; //svr calls
 - (void)playCurrentAudioRecording;
+- (float)getCurrentRecordingTime;
 
 
 @end
