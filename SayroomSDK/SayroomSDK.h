@@ -22,7 +22,7 @@
 - (id)initWithApplicationKey: (int)rmid APIKey: (NSString *)apikey;
 
 //accessible methods
-- (BOOL)recordAudio; //audio recorder
+- (BOOL)recordAudio: (int)timeLimitOnRecording; //audio recorder
 - (BOOL)stopRecordingOnImage: (int)biid; //svr calls
 - (BOOL)stopRecordingOnTask: (int)btid; //svr calls
 - (void)playCurrentAudioRecording;

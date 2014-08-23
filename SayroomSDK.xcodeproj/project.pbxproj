@@ -124,8 +124,8 @@
 				B2335BC419A48377000707C4 /* SayroomSDK.m */,
 				B2335BC519A48377000707C4 /* SRServerCalls.m */,
 				B2335BC619A48377000707C4 /* SRServerCalls.h */,
-				B2335BC719A48377000707C4 /* SRAudioRecorder.m */,
 				B2335BC819A48377000707C4 /* SRAudioRecorder.h */,
+				B2335BC719A48377000707C4 /* SRAudioRecorder.m */,
 				B2335BA019A482F8000707C4 /* Supporting Files */,
 			);
 			path = SayroomSDK;
@@ -423,6 +423,7 @@
 				B2335BBF19A482F8000707C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B2335BC019A482F8000707C4 /* Build configuration list for PBXNativeTarget "SayroomSDKTests" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +432,7 @@
 				B2335BC219A482F8000707C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

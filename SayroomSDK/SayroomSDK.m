@@ -96,14 +96,16 @@ static SayroomSDK *sharedInstance = nil;
 }
 
 
-- (BOOL)recordAudio{
+- (BOOL)recordAudio: (int)timeLimitOnRecording{
 
+    //pass time in secons should record, 10 secs, 20 secs, 30 secs
+    
     status = @"Recording";
     //recordObject = [[SRAudioRecorder alloc] init];
     
     //[recordObject startUpRecorderSession];
     
-    [recordObject recordAudio];
+    [recordObject recordAudio:timeLimitOnRecording];
     
     
     return YES;

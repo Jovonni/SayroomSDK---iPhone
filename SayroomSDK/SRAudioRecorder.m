@@ -13,6 +13,7 @@
     AVAudioPlayer *audio;
     AVAudioRecorder *audioRecorder;
     NSTimer *recordingTimer;
+    int timeLimitForRecording;
 }
 
 @property (strong, nonatomic) AVAudioRecorder *audioRecorder;
@@ -31,6 +32,7 @@
     
     return self;
 }
+
 
 -(BOOL)isReadyToRecord{
     BOOL isReadyToRecord;
@@ -155,9 +157,22 @@
 }
 
 
--(BOOL)recordAudio{
+-(BOOL)recordAudio: (int)timeLimit{
     
     //attempt to record
+    
+    if(timeLimit == 10){
+        timeLimitForRecording = timeLimit;
+    }else if(timeLimit == 20){
+        timeLimitForRecording = timeLimit;
+    }else if(timeLimit == 30){
+        timeLimitForRecording = timeLimit;
+    }else{
+        timeLimitForRecording = 10;
+    }
+    
+    
+    
     
     if([recordingTimer isValid]){
         NSLog(@"isValid and trying to record");
@@ -190,7 +205,7 @@
         
         recordingTimer = [NSTimer scheduledTimerWithTimeInterval:.01
                                                           target:self
-                                                        selector:@selector(isRecordingAtTenSeconds)
+                                                        selector:@selector(isRecordingAtLimit)
                                                         userInfo:nil repeats:YES
                           ];
         
@@ -246,10 +261,10 @@
     
 }
 
--(void)isRecordingAtTenSeconds{
+-(void)isRecordingAtLimit{
     
     int recordingtime = audioRecorder.currentTime;
-    int countdowntime = recordingtime - 10;
+    int countdowntime = recordingtime - timeLimitForRecording;
     int realcountdowntime = countdowntime * -1;
     
     
@@ -257,14 +272,14 @@
      //
     
     //count, and stop at 10
-    if (recordingtime<10) {
+    if (recordingtime<timeLimitForRecording) {
         //NSLog(@"less than");
         NSLog(@"Listening:  %i", realcountdowntime);
         
-    } else if (recordingtime>=10){
+    } else if (recordingtime>=timeLimitForRecording){
         NSLog(@"Done");
         //stop recording
-        [self recordAudio];
+        [self recordAudio: timeLimitForRecording];
     }
     
 }
