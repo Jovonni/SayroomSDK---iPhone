@@ -14,10 +14,12 @@
     AVAudioRecorder *audioRecorder;
     NSTimer *recordingTimer;
     int timeLimitForRecording;
+    int recordingtime;
 }
 
 @property (strong, nonatomic) AVAudioRecorder *audioRecorder;
 @property (strong, nonatomic) AVAudioPlayer *audio;
+@property (retain, nonatomic) NSTimer *recordingTimer;
 
 @end
 
@@ -25,6 +27,7 @@
 
 @synthesize audioRecorder;
 @synthesize audio;
+@synthesize recordingTimer;
 
 -(id)init{
     
@@ -145,18 +148,6 @@
     [audioRecorder record];
 }
 
--(BOOL)stopTheRecording{
-    
-    
-    NSLog(@"Stopping Recording");
-    [self killTheRecorder];
-    [recordingTimer invalidate], recordingTimer=nil;
-    NSLog(@"Stopped Recording");
-    
-    return YES;
-}
-
-
 -(BOOL)recordAudio: (int)timeLimit{
     
     //attempt to record
@@ -211,6 +202,7 @@
         
     } else {
         
+        //if not recording, and recording timer is valid --  is recording
         
         if([self stopTheRecording]){
             NSLog(@"From stop recording caller");
@@ -263,7 +255,7 @@
 
 -(void)isRecordingAtLimit{
     
-    int recordingtime = audioRecorder.currentTime;
+    recordingtime = audioRecorder.currentTime;
     int countdowntime = recordingtime - timeLimitForRecording;
     int realcountdowntime = countdowntime * -1;
     
@@ -291,33 +283,60 @@
 
 -(BOOL)stopRecordingOnImage: (int)biid reactorMemberID: (int)rmid APIKey: (NSString *)apik{
     
-    [self stopTheRecording];
     
-    NSLog(@"stopping recording");
     
-    SRServerCalls *srsc = [[SRServerCalls alloc] init];
+    if (!audioRecorder.recording && ![recordingTimer isValid]){
+         NSLog(@"stopping recording");
     
-    NSString *userLocation = @"THELOCATION";
+        SRServerCalls *srsc = [[SRServerCalls alloc] init];
     
-    [srsc userUploadAudioForImage:rmid brandImageID:biid userLocation:userLocation apikey:apik];
+        NSString *userLocation = @"THELOCATION";
     
-    return YES;
+        [srsc userUploadAudioForImage:rmid brandImageID:biid userLocation:userLocation apikey:apik];
     
+        return YES;
+
+    }else{
+        NSLog(@"stop recording on task: no");
+        return NO;
+    }
+    
+       
 }
 
 
 -(BOOL)stopRecordingOnTask: (int)btid reactorMemberID: (int)rmid APIKey: (NSString *)apik{
     
-    [self stopTheRecording];
+    if (!audioRecorder.recording && ![recordingTimer isValid]){
+        
+        NSLog(@"stopping recording");
     
-    NSLog(@"stopping recording");
+        SRServerCalls *srsc = [[SRServerCalls alloc] init];
     
-    SRServerCalls *srsc = [[SRServerCalls alloc] init];
+        NSString *userLocation = @"THELOCATION";
     
-    NSString *userLocation = @"THELOCATION";
+        [srsc userUploadAudioForTask:rmid brandTaskID:btid userLocation:userLocation apikey:apik];
     
-    [srsc userUploadAudioForTask:rmid brandTaskID:btid userLocation:userLocation apikey:apik];
+        return YES;
+        
+    }else{
+        NSLog(@"stop recording on task: no");
+        return NO;
+    }
+    
+    
+    
+}
 
+-(BOOL)stopTheRecording{
+    
+    
+    NSLog(@"stopped: %d", recordingtime);
+    
+    [self killTheRecorder];
+    [recordingTimer invalidate];
+    recordingTimer=nil;
+    
     
     return YES;
     

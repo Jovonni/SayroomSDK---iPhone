@@ -18,6 +18,7 @@
     SRAudioRecorder *recordObject;
     
     
+    
 }
 
 
@@ -111,22 +112,31 @@ static SayroomSDK *sharedInstance = nil;
     return YES;
 }
 
+-(void)stopAlreadyRecording{
+    [recordObject recordAudio:0];
+}
+
 - (BOOL)stopRecordingOnImage: (int)biid{
     
     status = @"Not Recording";
+    
+    [self stopAlreadyRecording];
+    
     
     SRAudioRecorder *srar = [[SRAudioRecorder alloc] init];
         
     [srar stopRecordingOnImage:1 reactorMemberID:reactorMemberID APIKey:userAPIKey];
     
-    
     return YES;
 
 }
 
+
 - (BOOL)stopRecordingOnTask: (int)btid{
     
     status = @"Not Recording";
+    
+    [self stopAlreadyRecording];
     
     SRAudioRecorder *srar = [[SRAudioRecorder alloc] init];
     
